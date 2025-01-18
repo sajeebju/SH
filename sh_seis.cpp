@@ -40,8 +40,6 @@ private:
     double dx, dz, dt;
     int nx, nz;
     std::vector<std::vector<double>> rho;
-
-    // 2nd-order finite-difference update
     void update_vel_2nd_order(std::vector<std::vector<double>>& vy,
                            const std::vector<std::vector<double>>& syx,
                            const std::vector<std::vector<double>>& syz) {
