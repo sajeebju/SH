@@ -4,8 +4,7 @@
 #include <stdexcept>
 #include <iostream>
 
-
-    VelocityUpdater::VelocityUpdater(double dx, double dz, double dt, int nx, int nz, const std::vector<std::vector<double>>& rho)
+VelocityUpdater::VelocityUpdater(double dx, double dz, double dt, int nx, int nz, const std::vector<std::vector<double>>& rho)
         : dx(dx), dz(dz), dt(dt), nx(nx), nz(nz), rho(rho) {}
 
     void  VelocityUpdater::update_velocity(std::vector<std::vector<double>>& vy,
@@ -242,7 +241,6 @@
         }
     }
 
-
 std::vector<std::vector<double>> absorb(int nx, int nz, int w, double a) {
     std::vector<double> coeff(w);
     for (int i = 0; i < w; ++i) {
@@ -273,9 +271,6 @@ std::vector<std::vector<double>> absorb(int nx, int nz, int w, double a) {
 
     return absorb_coeff;
 }
-
-
-
 
 std::pair<std::vector<double>, std::vector<double>> SH_SEIS(int nx, int nz, int nt, double dx, double dz, double dt,
                                                            double f0, double t0, int isrc, int jsrc, int ir, int jr,
@@ -352,9 +347,6 @@ std::pair<std::vector<double>, std::vector<double>> SH_SEIS(int nx, int nz, int 
     return {time, seis};
 }
 
-
-
-
 std::pair<std::vector<std::vector<std::vector<double>>>, std::vector<std::vector<double>>> wave_propagate(int nx, int nz, int nt, double dx, double dz, double dt,
                                                            double f0, double t0, int xsrc, int zsrc,
                                                            const std::vector<std::vector<double>>& vs,
@@ -366,7 +358,6 @@ std::pair<std::vector<std::vector<std::vector<double>>>, std::vector<std::vector
         throw std::invalid_argument("Unsupported accuracy level. Choose among 2, 4, 6, or 8.");
     }
 
-
         double isx = static_cast<int>(xsrc / dx);
         double isz = static_cast<int>(zsrc / dz);
 
@@ -376,7 +367,6 @@ std::pair<std::vector<std::vector<std::vector<double>>>, std::vector<std::vector
     double current_time = it * dt;
     ST[it] = -2.0 * (current_time - t0) * (f0 * f0) * std::exp(-(f0 * f0) * (current_time - t0) * (current_time - t0));
 }
-
 
     std::vector<std::vector<double>> vy(nx, std::vector<double>(nz, 0.0));
     std::vector<std::vector<double>> syx(nx, std::vector<double>(nz, 0.0));
@@ -424,11 +414,9 @@ std::pair<std::vector<std::vector<std::vector<double>>>, std::vector<std::vector
             updater_stress.update_stress(syx, syz, vy, 8);
         }
     
-
    if (isx >= 0 && isx < nx && isz >= 0 && isz < nz) {
     vy[isx][isz] += dt * dt * ST[it] / rho[isx][isz];
 }
-
 
         for (int i = 0; i < nx; ++i) {
             for (int j = 0; j < nz; ++j) {
@@ -440,14 +428,4 @@ std::pair<std::vector<std::vector<std::vector<double>>>, std::vector<std::vector
 
     return {solution_space, vy};
 }
-
-
-
-
-
-
-
-
-
-
 
