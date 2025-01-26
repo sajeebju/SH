@@ -10,7 +10,6 @@
 #include <cmath>
 #include <fstream>
 
-
 class VelocityUpdater {
 public:
     VelocityUpdater(double dx, double dz, double dt, int nx, int nz, const std::vector<std::vector<double>>& rho);
@@ -65,8 +64,6 @@ private:
                              const std::vector<std::vector<double>>& mu);
 };
 
-
-
 std::vector<std::vector<double>> absorb(int nx, int nz, int w, double a);
 
 // Function to compute seismograms
@@ -75,9 +72,6 @@ std::pair<std::vector<double>, std::vector<double>> SH_SEIS(int nx, int nz, int 
                                                            const std::vector<std::vector<double>>& vs,
                                                            const std::vector<std::vector<double>>& rho, int w, double a,
                                                            int accuracy);
-
-
-
 // Function to wave propagation
 std::pair<std::vector<double>, std::vector<double>> wave_propagate(int nx, int nz, int nt, double dx, double dz, double dt,
                                                            double f0, double t0, int xsrc, int zsrc,
@@ -85,7 +79,4 @@ std::pair<std::vector<double>, std::vector<double>> wave_propagate(int nx, int n
                                                            const std::vector<std::vector<double>>& rho,
                                                            int accuracy);
 
-
 #endif // SH2DWAVE_H
-
-
