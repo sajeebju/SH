@@ -73,7 +73,7 @@ std::pair<std::vector<double>, std::vector<double>> SH_SEIS(int nx, int nz, int 
                                                            const std::vector<std::vector<double>>& rho, int w, double a,
                                                            int accuracy);
 // Function to wave propagation
-std::pair<std::vector<double>, std::vector<double>> wave_propagate(int nx, int nz, int nt, double dx, double dz, double dt,
+std::pair<std::vector<std::vector<std::vector<double>>>, std::vector<std::vector<double>>> wave_propagate(int nx, int nz, int nt, double dx, double dz, double dt,
                                                            double f0, double t0, int xsrc, int zsrc,
                                                            const std::vector<std::vector<double>>& vs,
                                                            const std::vector<std::vector<double>>& rho,
