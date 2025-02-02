@@ -13,3 +13,6 @@ g++ sh2dwave.o seismo.o -o sh2dseis_program \
 SH Wave Propagation using Python - matplotlib animation
 
 ![Image](https://github.com/user-attachments/assets/2067a9c0-05d4-439a-8ce8-39fef89e145e)
+
+
+![Image](https://github.com/user-attachments/assets/e402d88a-8d6f-421f-8364-34ac7cba0c21)
