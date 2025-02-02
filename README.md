@@ -15,4 +15,6 @@ SH Wave Propagation using Python - matplotlib animation
 ![Image](https://github.com/user-attachments/assets/2067a9c0-05d4-439a-8ce8-39fef89e145e)
 
 
+SH Wave Propagation using absorbing boundary condition
 
+https://github.com/user-attachments/assets/0a4e4594-bf49-4d55-a84f-a262361e067b
