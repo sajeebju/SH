@@ -1,3 +1,6 @@
+#This is the extended version code of - 
+#https://github.com/daniel-koehn/Theory-of-seismic-waves-II/blob/master/06_2D_SH_Love_wave_modelling/2_From_2D_acoustic_to_SH_FD_modelling_final.ipynb
+
 #!/usr/bin/env python3
 import numpy as np
 from numba import jit
